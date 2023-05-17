@@ -1,9 +1,14 @@
 stages:
 - stage: continuous_integration
+  displayName: Continuous Integration
   jobs:
   - job: build
     steps:
     - script: dotnet --version
+      displayName: Checj >NET Version
     - script: dotnet restore
+      displayName: dotnet restore
     - script: dotnet build
+      displayName: build .NET Project
     - script: dotnet run
+      displayName: Run .NET Project
